@@ -7,8 +7,12 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'folder/:id',
+    path: 'home',
     loadComponent: () =>
       import('./folder/folder.page').then((m) => m.FolderPage),
+  },
+  {
+    path: 'task',
+    loadComponent: () => import('./tasklist/tasklist.page').then( m => m.TasklistPage)
   },
 ];

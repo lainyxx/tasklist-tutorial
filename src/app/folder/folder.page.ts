@@ -20,12 +20,6 @@ export class FolderPage implements OnInit {
   private activatedRoute = inject(ActivatedRoute);
   constructor() {}
 
-  ionViewWillEnter() {
-    if ('tasks' in localStorage) {
-      this.tasks = JSON.parse(localStorage.tasks);
-    } 
-  }
-
   addTask() {
     this.tasks.push({
       name: this.task
@@ -36,5 +30,11 @@ export class FolderPage implements OnInit {
 
   ngOnInit() {
     // this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
+  }
+
+  ionViewWillEnter() {
+    if ('tasks' in localStorage) {
+      this.tasks = JSON.parse(localStorage.tasks);
+    } 
   }
 }
